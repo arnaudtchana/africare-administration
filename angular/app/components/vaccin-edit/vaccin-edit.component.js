@@ -1,9 +1,10 @@
 class VaccinEditController{
-    constructor($stateParams, $state, API){
+    constructor($stateParams, $state, API,$translate){
         'ngInject';
         this.$state = $state
         this.formSubmitted = false
         this.alerts = []
+        this.$translate = $translate
         this.userRolesSelected = []
 
         if ($stateParams.alerts) {
@@ -24,10 +25,15 @@ class VaccinEditController{
     save (isValid) {
         if (isValid) {
             let $state = this.$state
+            let $translate = this.$translate
             this.vaccineditdata.put()
                 .then(() => {
-                    let alert = { type: 'success', 'title': 'Success!', msg: 'User has been updated.' }
-                    $state.go($state.current, { alerts: alert})
+                    $translate('update_reussi').then(function (translation) {
+                        let alert = { type: 'success', 'title': 'Success!', msg: translation }
+                        $state.go($state.current, { alerts: alert})
+                    },function(error){
+                        console.log('error',error)
+                    })
                 }, (response) => {
                     let alert = { type: 'error', 'title': 'Error!', msg: response.data.message }
                     $state.go($state.current, { alerts: alert})
