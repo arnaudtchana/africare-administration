@@ -1,0 +1,41 @@
+<section class="content-header">
+  <h1>{{'user' | translate}} <small>{{'update_role' | translate}}</small></h1>
+  <ol class="breadcrumb">
+    <li><a ui-sref="app.landing"><i class="fa fa-dashboard"></i> {{'accueil' | translate}}</a></li>
+    <li><a ui-sref="app.userlist">{{'user_list' | translate}}</a></li>
+    <li class="active">{{'update_role' | translate}}</li>
+  </ol>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-sm-12 col-md-7">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">{{'update_role' | translate}}</h3>
+        </div>
+        <form class="form-horizontal" name="userForm" ng-submit="vm.save(userForm.$valid)" novalidate>
+          <div class="box-body">
+            <div ng-if="vm.alerts" class="alert alert-{{alert.type}}" ng-repeat="alert in vm.alerts">
+              <h4>{{alert.title}}</h4>
+              <p>{{alert.msg}}</p>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">{{'role' | translate}}</label>
+              <div class="col-sm-10">
+                <div class="checkbox" ng-repeat="role in vm.systemRoles">
+                  <label>
+                    <input type="checkbox" checklist-model="vm.usereditdata.roles" checklist-value="role.id"> {{role.name}}
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box-footer">
+            <a ui-sref="app.userlist" class="btn btn-default"><i class="fa fa-angle-double-left"></i> {{'retour' | translate}}</a>
+            <button type="submit" class="btn btn-primary pull-right">{{'valider' | translate}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

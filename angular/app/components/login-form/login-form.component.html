@@ -1,0 +1,54 @@
+<form ng-submit="vm.login()" method="post" name="vm.loginForm">
+  <div class="callout callout-danger" ng-if="vm.loginfailederror">
+    <h4>Login Failed</h4>
+    <p>{{ vm.loginfailederror }}</p>
+  </div>
+  <div class="callout callout-danger" ng-if="vm.loginfailed">
+    <h4>Login Failed</h4>
+    <p>Incorrect Email/Username or Password.</p>
+  </div>
+  <div class="callout callout-danger" ng-if="vm.unverified">
+    <h4>Email Unverified</h4>
+    <p>Please check your email and click the verification link.</p>
+  </div>
+  <div class="callout callout-success" ng-if="vm.registerSuccess">
+    <h4>Registration Success!</h4>
+    <p>A verification link has been sent to your Email Account. Thank You!</p>
+  </div>
+  <div class="callout callout-success" ng-if="vm.successMsg">
+    <h4>Success!</h4>
+    <p>{{ vm.successMsg }}</p>
+  </div>
+  <div class="form-group has-feedback">
+    <input type="text" class="form-control" placeholder="{{'username' | translate}}" name="login" ng-model="vm.email" ng-required="true">
+    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+  </div>
+  <div class="form-group has-feedback">
+    <input type="password" class="form-control" placeholder="{{'password' | translate}}" name="password" ng-model="vm.password" ng-required="true">
+    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <button type="submit" class="btn btn-primary btn-block btn-flat">
+         {{ 'connexion' | translate }}
+      </button>
+    </div>
+  </div>
+</form>
+<div class="row">
+    <div class="col-md-offset-4 col-md-4" style="text-align:center">
+        <br>
+        <select ng-model="lang" ng-change="change_langue()">
+            <option value="fr">{{'francais' | translate}}</option>
+            <option value="en">{{'anglais' | translate}}</option>
+        </select>
+    </div>
+</div><br>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="center" style="text-align:center">
+      <a ui-sref="forgot_password">{{'pass_oublier' | translate}}?</a>
+    </div>
+  </div>
+
+</div>

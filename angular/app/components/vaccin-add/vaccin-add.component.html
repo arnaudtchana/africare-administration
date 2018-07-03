@@ -1,0 +1,44 @@
+<section class="content">
+    <div class="row">
+        <div class="col-sm-12 col-md-7">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{'ajout_vaccin' | translate}}</h3>
+                </div>
+                <form class="form-horizontal" name="userForm" ng-submit="vm.save(userForm.$valid)" novalidate>
+                    <div class="box-body">
+                        <div ng-if="vm.alerts" class="alert alert-{{alert.type}}" ng-repeat="alert in vm.alerts">
+                            <h4>{{alert.title}}</h4>
+                            <p>{{alert.msg}}</p>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error': userForm.name.$invalid && ( vm.formSubmitted || userForm.name.$touched) }">
+                            <label for="inputEmail3" class="col-sm-2 control-label">{{'type_vaccin' | translate}}</label>
+                            <div class="col-sm-10">
+                                <select name="typevaccin_id" class="form-control" ng-model="vm.typevaccin_id" required>
+                                    <option value="{{vaccin.id}}" ng-repeat="vaccin in type_vaccin">{{vaccin.nom}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error': userForm.nom_fr.$invalid && ( vm.formSubmitted || userForm.nom_fr.$touched) }">
+                            <label for="inputEmail3" class="col-sm-2 control-label">{{'nom_francais' | translate}}</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" ng-model="vm.nom_fr" name="nom_fr" placeholder="{{'nom_francais' | translate}}" required>
+                                <p ng-show="userForm.nom_fr.$error.required && ( vm.formSubmitted || userForm.nom_fr.$touched)" class="help-block">{{'nom_francais_requis' | translate}}.</p>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error': userForm.nom_en.$invalid && ( vm.formSubmitted || userForm.nom_en.$touched) }">
+                            <label for="inputEmail3" class="col-sm-2 control-label">{{'nom_anglais' | translate}}</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" ng-model="vm.nom_en" name="nom_en" placeholder="{{'nom_anglais' | translate}}" required>
+                                <p ng-show="userForm.nom_en.$error.required && ( vm.formSubmitted || userForm.nom_en.$touched)" class="help-block">{{'nom_anglais_requis' | translate}}.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary pull-right">{{'valider' | translate}}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

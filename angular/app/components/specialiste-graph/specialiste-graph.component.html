@@ -1,0 +1,53 @@
+<section class="content">
+    <div class="row">
+        <div class="col-sm-12 col-md-7">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{'choix_specialite' | translate}}</h3>
+                </div>
+                <form class="form-horizontal" name="userForm" ng-submit="save(userForm.$valid)" novalidate>
+                    <div class="box-body">
+                        <div ng-if="vm.alerts" class="alert alert-{{alert.type}}" ng-repeat="alert in vm.alerts">
+                            <h4>{{alert.title}}</h4>
+                            <p>{{alert.msg}}</p>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error': userForm.name.$invalid && ( vm.formSubmitted || userForm.name.$touched) }">
+                            <label class="col-sm-4 control-label">{{'liste_specialite' | translate}}</label>
+                            <div class="col-sm-8">
+                                <select name="specialite_id" class="form-control" ng-model="specialite_id" required>
+                                    <option value="{{spec.id}}" ng-repeat="spec in specialites">{{spec.nom}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary pull-right">{{'valider' | translate}}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-sm-12 col-md-7">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{'graphe_specialite' | translate}}</h3>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="chart">
+                                <canvas id="area" class="chart chart-bar" chart-data="barChartData" chart-labels="barChartLabels" chart-legend="false" chart-series="barChartSeries" chart-click="vm.onClick" chart-colours="barChartColours" style="height: 250px;">
+                                </canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

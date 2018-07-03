@@ -1,0 +1,302 @@
+<aside class="main-sidebar">
+  <section class="sidebar">
+    <div class="user-panel">
+      <!--<div class="pull-left image">
+        <img src="{{vm.userData.avatar}}" class="img-circle" alt="User Image" onError="this.src='//placeholdit.imgix.net/~text?txtfont=monospace,bold&bg=DD4B39&txtclr=ffffff&txt=A&w=45&h=45&txtsize=16'">
+      </div>-->
+      <!--<div class="pull-left info">
+        &lt;!&ndash;<p>{{vm.userData.name | capitalize}}</p>&ndash;&gt;
+        <a href="javascript:void(0)"><i class="fa fa-circle text-success"></i> Online</a>
+      </div>-->
+    </div>
+    <form action="#" method="get" class="sidebar-form">
+      <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Search...">
+        <span class="input-group-btn">
+          <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+          </button>
+        </span>
+      </div>
+    </form>
+    <ul class="sidebar-menu">
+      <li class="header">MENU</li>
+      <li>
+        <a ui-sref='app.landing'>
+          <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+        </a>
+      </li>
+        <!--nous avons commenter toutes les parties integrant la gestion des permissions et des acl-->
+      <!--<li class="treeview" ng-show="vm.can('manage.users')">-->
+      <li class="treeview">
+        <a href="javascript:void(0)">
+          <i class="fa fa-users"></i> <span>{{'user' | translate}}</span> <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <!--<li ng-show="vm.can('manage.users')" class="active"><a ui-sref='app.userlist'><i class="fa fa-circle-o"></i> <span>User List</span></a></li>-->
+          <li class="active"><a ui-sref='app.userlist'><i class="fa fa-circle-o"></i> <span>{{'user_list' | translate}}</span></a></li>
+        </ul>
+      </li>
+        <li class="treeview">
+            <a href="javascript:void(0)">
+                <i class="fa fa-users"></i> <span>{{'medecin' | translate}}</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <!--<li ng-show="vm.can('manage.users')" class="active"><a ui-sref='app.userlist'><i class="fa fa-circle-o"></i> <span>User List</span></a></li>-->
+                <li>
+                    <a ui-sref='app.medecinlist'>
+                        <i class="fa fa-circle-o"></i> <span>{{'liste_medecin' | translate}}</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref='app.medecinadd'>
+                        <i class="fa fa-circle-o"></i> <span>{{'enregistrement' | translate}}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="treeview">
+            <a href="javascript:void(0)">
+                <i class="fa"></i> <span>{{'maladie' | translate}}</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <!--<li ng-show="vm.can('manage.users')" class="active"><a ui-sref='app.userlist'><i class="fa fa-circle-o"></i> <span>User List</span></a></li>-->
+                <li>
+                    <a ui-sref='app.maladielist'>
+                        <i class="fa fa-circle-o"></i> <span>{{'liste_maladie' | translate}}</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref='app.maladieadd'>
+                        <i class="fa fa-circle-o"></i> <span>{{'ajout_maladie' | translate}}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="treeview">
+            <a href="javascript:void(0)">
+                <i class="fa"></i> <span>{{'allergie' | translate}}</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <!--<li ng-show="vm.can('manage.users')" class="active"><a ui-sref='app.userlist'><i class="fa fa-circle-o"></i> <span>User List</span></a></li>-->
+                <li>
+                    <a ui-sref='app.allergielist'>
+                        <i class="fa fa-circle-o"></i> <span>{{'liste_allergie' | translate}}</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref='app.allergieadd'>
+                        <i class="fa fa-circle-o"></i> <span>{{'ajout_allergie' | translate}}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="treeview">
+            <a href="javascript:void(0)">
+                <i class="fa"></i> <span>{{'type_vaccin' | translate}}</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <!--<li ng-show="vm.can('manage.users')" class="active"><a ui-sref='app.userlist'><i class="fa fa-circle-o"></i> <span>User List</span></a></li>-->
+                <li>
+                    <a ui-sref='app.typevaccinlist'>
+                        <i class="fa fa-circle-o"></i> <span>{{'type_vaccin_liste' | translate}}</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref='app.typevaccinadd'>
+                        <i class="fa fa-circle-o"></i> <span>{{'type_vaccin_ajout' | translate}}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="treeview">
+            <a href="javascript:void(0)">
+                <i class="fa"></i> <span>{{'vaccin' | translate}}</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <!--<li ng-show="vm.can('manage.users')" class="active"><a ui-sref='app.userlist'><i class="fa fa-circle-o"></i> <span>User List</span></a></li>-->
+                <li>
+                    <a ui-sref='app.vaccinlist'>
+                        <i class="fa fa-circle-o"></i> <span>{{'liste_vaccin' | translate}}</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref='app.vaccinadd'>
+                        <i class="fa fa-circle-o"></i> <span>{{'ajout_vaccin' | translate}}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="treeview">
+            <a href="javascript:void(0)">
+                <i class="fa"></i> <span>{{'hopital' | translate}}</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <!--<li ng-show="vm.can('manage.users')" class="active"><a ui-sref='app.userlist'><i class="fa fa-circle-o"></i> <span>User List</span></a></li>-->
+                <li>
+                    <a ui-sref='app.hopitallist'>
+                        <i class="fa fa-circle-o"></i> <span>{{'hopital_liste' | translate}}</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref='app.hopitaladd'>
+                        <i class="fa fa-circle-o"></i> <span>{{'hopital_ajout' | translate}}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="treeview">
+            <a href="javascript:void(0)">
+                <i class="fa"></i> <span>{{'graphe' | translate}}</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <!--<li ng-show="vm.can('manage.users')" class="active"><a ui-sref='app.userlist'><i class="fa fa-circle-o"></i> <span>User List</span></a></li>-->
+                <li>
+                    <a ui-sref='app.allergiegraph'>
+                        <i class="fa fa-circle-o"></i> <span>{{'allergie' | translate}}</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref='app.maladiegraph'>
+                        <i class="fa fa-circle-o"></i> <span>{{'maladie' | translate}}</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref='app.groupegraph'>
+                        <i class="fa fa-circle-o"></i> <span>{{'groupe' | translate}}</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref='app.specialistegraph'>
+                        <i class="fa fa-circle-o"></i> <span>{{'specialiste' | translate}}</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref='app.hopitalgraph'>
+                        <i class="fa fa-circle-o"></i> <span>{{'hopital' | translate}}</span>
+                    </a>
+                </li>
+                <!--<li>
+                    <a ui-sref='app.medicamentgraph'>
+                        <i class="fa fa-circle-o"></i> <span>Médicament</span>
+                    </a>
+                </li>-->
+            </ul>
+        </li>
+      <!--<li class="treeview" ng-show="vm.can('manage.roles') || vm.can('manage.permissions')">-->
+      <!--<li class="treeview">
+        <a href="javascript:void(0)">
+          <i class="fa fa-cog"></i> <span>Settings</span> <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          &lt;!&ndash;<li ng-show="vm.can('manage.roles')"><a ui-sref='app.userroles'><i class="fa fa-circle-o"></i> <span>User Roles</span></a></li>&ndash;&gt;
+          <li><a ui-sref='app.userroles'><i class="fa fa-circle-o"></i> <span>User Roles</span></a></li>
+          &lt;!&ndash;<li ng-show="vm.can('manage.permissions')"><a ui-sref='app.userpermissions'><i class="fa fa-circle-o"></i> <span>User Permissions</span></a></li>&ndash;&gt;
+          <li><a ui-sref='app.userpermissions'><i class="fa fa-circle-o"></i> <span>User Permissions</span></a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0)">
+          <i class="fa fa-files-o"></i>
+          <span>Layout Options</span>
+          <span class="label label-primary pull-right">4</span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Boxed</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Fixed</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+        </ul>
+      </li>
+      <li>
+        <a ui-sref="app.widgets">
+          <i class="fa fa-th"></i> <span>Widgets</span>
+          <small class="label pull-right bg-green">new</small>
+        </a>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0)">
+          <i class="fa fa-pie-chart"></i>
+          <span>Charts</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a ui-sref="app.chartjs"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Morris</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Flot</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0)">
+          <i class="fa fa-laptop"></i>
+          <span>UI Elements</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a ui-sref="app.uigeneral"><i class="fa fa-circle-o"></i> General</a></li>
+          <li><a ui-sref="app.uiicons"><i class="fa fa-circle-o"></i> Icons</a></li>
+          <li><a ui-sref="app.uibuttons"><i class="fa fa-circle-o"></i> Buttons</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Sliders</a></li>
+          <li><a ui-sref="app.uitimeline"><i class="fa fa-circle-o"></i> Timeline</a></li>
+          <li><a ui-sref="app.uimodal"><i class="fa fa-circle-o"></i> Modals</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0)">
+          <i class="fa fa-edit"></i> <span>Forms</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a ui-sref="app.formsgeneral"><i class="fa fa-circle-o"></i> General Elements</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Editors</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0)">
+          <i class="fa fa-table"></i> <span>Tables</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a ui-sref="app.tablessimple"><i class="fa fa-circle-o"></i> Simple tables</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Data tables</a></li>
+        </ul>
+      </li>
+      <li>
+        <a ui-sref="app.comingsoon">
+          <i class="fa fa-calendar"></i> <span>Calendar</span>
+          <small class="label pull-right bg-red">3</small>
+        </a>
+      </li>
+      <li>
+        <a ui-sref="app.comingsoon">
+          <i class="fa fa-envelope"></i> <span>Mailbox</span>
+          <small class="label pull-right bg-yellow">12</small>
+        </a>
+      </li>
+      <li class="header">LABELS</li>
+      <li class="treeview">
+        <a href="javascript:void(0)">
+          <i class="fa fa-folder"></i> <span>Examples</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Invoice</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Profile</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Login</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Register</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> 404 Error</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> 500 Error</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Blank Page</a></li>
+          <li><a ui-sref="app.comingsoon"><i class="fa fa-circle-o"></i> Pace Page</a></li>
+        </ul>
+      </li>-->
+    </ul>
+  </section>
+</aside>
